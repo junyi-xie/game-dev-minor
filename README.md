@@ -1,2 +1,2 @@
 # game-dev-minor
-Game Development Minor at The Hague University of Applied Sciences
+Game Development Minor at The Hague University of Applied Sciences in Zoetermeer
