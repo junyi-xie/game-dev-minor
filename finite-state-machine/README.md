@@ -1,4 +1,4 @@
-# State Machine
+# Implementing a State Machine in Godot - Game Programming | Gold 1
 some inspiring text..
 
 ## Requirements
@@ -11,3 +11,7 @@ some inspiring text..
 - State machine implementation uses class-hierarchy.
 - Player movement is framerate independent.
 - Player is kept in frame.
+
+## Credits
+
+Tilesets used: https://grafxkid.itch.io/seasonal-tilesets
