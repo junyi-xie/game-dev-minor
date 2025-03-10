@@ -1,11 +1,10 @@
 # Implementing a State Machine in Godot - Game Programming | Gold 1
 
-<video width="800" height="600" loop muted autoplay>
-  <source src="demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
 Simple Finite State Machine implementation in Godot 4.4.
+
+## Preview
+
+https://github.com/junyi-xie/game-dev-minor/blob/readme-state-machine-update/finite-state-machine/preview.mov
 
 ## Controls
 
