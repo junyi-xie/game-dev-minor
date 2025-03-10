@@ -1,8 +1,10 @@
 # Implementing a State Machine in Godot - Game Programming | Gold 1
 
-<img src="https://github.com/junyi-xie/game-dev-minor/blob/readme-state-machine-update/finite-state-machine/preview.png"></img>
-
 Simple Finite State Machine implementation in Godot 4.4.
+
+## Preview
+
+<img src="https://github.com/junyi-xie/game-dev-minor/blob/main/finite-state-machine/preview.png" />
 
 ## Controls
 
