@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl61cd1uc5wj4"]
+
+[ext_resource type="Script" uid="uid://cd5x2c6jrgi24" path="res://script/ui.gd" id="1_u7n8c"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_u7n8c")
+
+[node name="StateLabel" type="Label" parent="."]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 143.0
+offset_bottom = 33.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "CURRENT STATE: "

@@ -1,11 +1,19 @@
-[gd_scene load_steps=50 format=3 uid="uid://lbo8ykbscx6b"]
+[gd_scene load_steps=60 format=3 uid="uid://lbo8ykbscx6b"]
 
 [ext_resource type="Script" uid="uid://b5enir4daij57" path="res://script/player.gd" id="1_7h6ip"]
 [ext_resource type="Texture2D" uid="uid://drgnnh3cp31qj" path="res://assets/Double Jump (32x32).png" id="2_f33sr"]
+[ext_resource type="Texture2D" uid="uid://chbx0cucq0ujh" path="res://assets/Fall (32x32).png" id="3_je7p5"]
 [ext_resource type="Texture2D" uid="uid://dx6f1q0xo4hiw" path="res://assets/Hit (32x32).png" id="3_o0o36"]
 [ext_resource type="Texture2D" uid="uid://bfhlonpc73rey" path="res://assets/Idle (32x32).png" id="4_tj1sg"]
 [ext_resource type="Texture2D" uid="uid://drjep0qgka2j" path="res://assets/Run (32x32).png" id="5_tj1sg"]
+[ext_resource type="Texture2D" uid="uid://dlmlu0hapxd3a" path="res://assets/Jump (32x32).png" id="6_fm80t"]
 [ext_resource type="Texture2D" uid="uid://by16f614e51x8" path="res://assets/Wall Jump (32x32).png" id="6_pe35h"]
+[ext_resource type="Script" uid="uid://dfvi0l5oglecc" path="res://script/states/idle.gd" id="7_5gtgg"]
+[ext_resource type="Script" uid="uid://d0bjyng5d5w3g" path="res://script/states/walk.gd" id="8_h17s1"]
+[ext_resource type="Script" uid="uid://2qim5us2jv5b" path="res://script/state_machine.gd" id="9_gx1jg"]
+[ext_resource type="Script" uid="uid://xmv3w02ym8xy" path="res://script/states/jump.gd" id="9_je7p5"]
+[ext_resource type="Script" uid="uid://b7yq8u17tb1fu" path="res://script/states/fall.gd" id="12_fm80t"]
+[ext_resource type="Script" uid="uid://dx5oumv5iwe8k" path="res://script/states/double_jump.gd" id="14_ugbui"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pe35h"]
 atlas = ExtResource("2_f33sr")
@@ -30,6 +38,10 @@ region = Rect2(128, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jn51r"]
 atlas = ExtResource("2_f33sr")
 region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx1jg"]
+atlas = ExtResource("3_je7p5")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bkbtv"]
 atlas = ExtResource("3_o0o36")
@@ -102,6 +114,10 @@ region = Rect2(288, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jpdyr"]
 atlas = ExtResource("4_tj1sg")
 region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugbui"]
+atlas = ExtResource("6_fm80t")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6b0m"]
 atlas = ExtResource("5_tj1sg")
@@ -198,6 +214,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_gx1jg")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bkbtv")
 }, {
 "duration": 1.0,
@@ -262,6 +286,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ugbui")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_c6b0m")
 }, {
 "duration": 1.0,
@@ -298,7 +330,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_2t1ds")
 }],
 "loop": true,
-"name": &"run",
+"name": &"walk",
 "speed": 20.0
 }, {
 "frames": [{
@@ -330,10 +362,47 @@ script = ExtResource("1_7h6ip")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_c6b0m")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.372808
+animation = &"walk"
+frame_progress = 0.769351
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_fesw4")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state")]
+script = ExtResource("9_gx1jg")
+default_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("walk_state", "fall_state", "jump_state")]
+script = ExtResource("7_5gtgg")
+walk_state = NodePath("../Walk")
+fall_state = NodePath("../Fall")
+jump_state = NodePath("../Jump")
+animation_name = "idle"
+
+[node name="Walk" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "jump_state", "fall_state")]
+script = ExtResource("8_h17s1")
+idle_state = NodePath("../Idle")
+jump_state = NodePath("../Jump")
+fall_state = NodePath("../Fall")
+animation_name = "walk"
+
+[node name="Jump" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "walk_state", "fall_state", "double_jump_state")]
+script = ExtResource("9_je7p5")
+idle_state = NodePath("../Idle")
+walk_state = NodePath("../Walk")
+fall_state = NodePath("../Fall")
+double_jump_state = NodePath("../DoubleJump")
+animation_name = "jump"
+
+[node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "walk_state", "double_jump_state")]
+script = ExtResource("12_fm80t")
+idle_state = NodePath("../Idle")
+walk_state = NodePath("../Walk")
+double_jump_state = NodePath("../DoubleJump")
+animation_name = "fall"
+
+[node name="DoubleJump" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state")]
+script = ExtResource("14_ugbui")
+fall_state = NodePath("../Fall")
+animation_name = "double_jump"

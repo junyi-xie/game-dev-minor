@@ -12,6 +12,10 @@ some inspiring text..
 - Player movement is framerate independent.
 - Player is kept in frame.
 
+## Tutorial
+https://www.youtube.com/watch?v=oqFbZoA2lnU
+
 ## Credits
 
-Tilesets used: https://grafxkid.itch.io/seasonal-tilesets
+Tilesets used: https://kenney.nl/assets/pixel-platformer
+Character sprite: https://pixelfrog-assets.itch.io/pixel-adventure-1
