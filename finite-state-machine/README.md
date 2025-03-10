@@ -1,5 +1,18 @@
 # Implementing a State Machine in Godot - Game Programming | Gold 1
-some inspiring text..
+
+Simple Finite State Machine implementation in Godot 4.4.
+
+## Preview
+
+<img src="https://github.com/junyi-xie/game-dev-minor/blob/main/finite-state-machine/preview.png" />
+
+## Controls
+
+The player can be moved using the following controls:
+
+- **WASD** or **Arrow keys** to move
+- **Space** to jump
+- **Space (mid-air)** to double jump (_only accessible while in Jump or Fall state_)
 
 ## Requirements
 
@@ -13,9 +26,15 @@ some inspiring text..
 - Player is kept in frame.
 
 ## Tutorial
-https://www.youtube.com/watch?v=oqFbZoA2lnU
+
+For this achievement, I followed the following tutorials:
+
+- [Finite State Machines in Godot 4 in Under 10 Minutes ](https://www.youtube.com/watch?v=ow_Lum-Agbs)
+- [Start Your Game Creation Journey Today! (Godot beginner tutorial)](https://www.youtube.com/watch?v=5V9f3MT86M8)
+- [Starter state machines in Godot 4 ](https://www.youtube.com/watch?v=oqFbZoA2lnU)
 
 ## Credits
 
-Tilesets used: https://kenney.nl/assets/pixel-platformer
-Character sprite: https://pixelfrog-assets.itch.io/pixel-adventure-1
+Tileset: https://kenney.nl/assets/pixel-platformer
+
+Character: https://pixelfrog-assets.itch.io/pixel-adventure-1
