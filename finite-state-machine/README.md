@@ -2,10 +2,6 @@
 
 Simple Finite State Machine implementation in Godot 4.4.
 
-## Preview
-
-https://github.com/junyi-xie/game-dev-minor/blob/readme-state-machine-update/finite-state-machine/preview.mov
-
 ## Controls
 
 The player can be moved using the following controls:
