@@ -17,13 +17,20 @@ The player can be moved using the following controls:
 ## Requirements
 
 - Simple 2D/3D level.
+  - The character can move through a level that supports/facilitates the movement states. 
 - Player can be controlled.
+  - The player object can be moved with WASD or arrow-keys. 
 - Conatains at least 4 different states.
+  - For example idle, walk, run, jump.
 - At least 1 state relies on another state.
+  - For example jump can only be entered from run.
 - Different states should be observable.
+  - The state changes and current active state are easily determined by use of colour, sprites, or text.
 - State machine implementation uses class-hierarchy.
+  - No giant is-else, enums or booleans (for state management) used.
 - Player movement is framerate independent.
 - Player is kept in frame.
+  - Use a follow camera of some kind.
 
 ## Tutorial
 
