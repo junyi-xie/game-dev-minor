@@ -12,7 +12,7 @@ The player can be moved using the following controls:
 
 - **WASD** or **Arrow keys** to move
 - **Space** to jump
-- **Space (mid-air)** to double jump (_only accessible while in Jump or Fall state_)
+- **Space (while ascending mid-air)** to double jump (_only accessible from the Jump state_)
 
 ## Requirements
 
