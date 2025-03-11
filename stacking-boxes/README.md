@@ -16,3 +16,7 @@ some inspiring text..
   - Player must be able to control where the box is dropped.
 - Camera responds to stacked boxes. 
   - As the stack gets higher, your game should handle the camera position and spawn location so the game can still continue.
+
+## Credits
+
+Objects: https://www.kenney.nl/assets/furniture-kit

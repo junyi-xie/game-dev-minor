@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://wjw15gfv63yy"]
+
+[ext_resource type="PackedScene" uid="uid://cvt4scs1wc8kp" path="res://assets/models/washer.glb" id="1_wrv74"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6aasm"]
+size = Vector3(0.391724, 0.476807, 0.349121)
+
+[node name="Washer" type="RigidBody3D"]
+
+[node name="washer" parent="." instance=ExtResource("1_wrv74")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192932, 0.227173, -0.174561)
+shape = SubResource("BoxShape3D_6aasm")
