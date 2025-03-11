@@ -355,7 +355,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fesw4"]
-size = Vector2(20, 26)
+size = Vector2(20, 22)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_7h6ip")
@@ -366,7 +366,7 @@ animation = &"walk"
 frame_progress = 0.769351
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_fesw4")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state")]
@@ -395,11 +395,10 @@ fall_state = NodePath("../Fall")
 double_jump_state = NodePath("../DoubleJump")
 animation_name = "jump"
 
-[node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "walk_state", "double_jump_state")]
+[node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "walk_state")]
 script = ExtResource("12_fm80t")
 idle_state = NodePath("../Idle")
 walk_state = NodePath("../Walk")
-double_jump_state = NodePath("../DoubleJump")
 animation_name = "fall"
 
 [node name="DoubleJump" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state")]
