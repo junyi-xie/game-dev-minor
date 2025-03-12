@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://rtlaeh0mnp4u"]
+
+[ext_resource type="PackedScene" uid="uid://cw2h545ecq6r0" path="res://assets/models/dryer.glb" id="1_tkdnh"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_c7xpn"]
+points = PackedVector3Array(0.384683, 0.458038, -0.0163649, 0.000388557, 0.00124338, -0.35, 0.387548, 0.00124338, -0.35, 0.000388557, 0.468757, -0.35, 2.77556e-17, 0.000774182, -0.020989, 0.387548, 0.468757, -0.35, 0, 0.469226, -0.020989, 0.388578, -2.77556e-17, -0.020481, 0.00360993, 0.0626, -0.00228253, 0.383995, 0.399912, -0.00258265, 0.00394253, 0.399911, -0.00258376, 0.384327, 0.0626, -0.00228253, 0.388578, 0.47, -0.020481, 0.00325182, 0.45804, -0.0163632)
+
+[node name="Dryer" type="RigidBody3D"]
+
+[node name="dryer" parent="." instance=ExtResource("1_tkdnh")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.00437737, 0.00983596, -0.00100946)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.00437737, 0.00983596, -0.00100946)
+shape = SubResource("ConvexPolygonShape3D_c7xpn")
