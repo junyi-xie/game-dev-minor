@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://du788rx5jb0ud"]
+
+[ext_resource type="PackedScene" uid="uid://c1mvgjnu8l3ra" path="res://scenes/environment/floor.tscn" id="1_h3e3j"]
+[ext_resource type="Script" uid="uid://02oedld8h8n4" path="res://scripts/level.gd" id="1_i166f"]
+[ext_resource type="PackedScene" uid="uid://blyj2cexggi3i" path="res://scenes/controller/camera.tscn" id="2_nbgty"]
+[ext_resource type="PackedScene" uid="uid://d2sis1frmw5bm" path="res://scenes/controller/object_spawner.tscn" id="4_qkmgm"]
+[ext_resource type="PackedScene" uid="uid://h76gtl1d7p1d" path="res://scenes/controller/height_detector.tscn" id="5_hnne4"]
+
+[sub_resource type="Environment" id="Environment_qkmgm"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_i166f"]
+
+[node name="Level" type="Node3D" node_paths=PackedStringArray("camera_controller", "object_spawner", "height_detector")]
+script = ExtResource("1_i166f")
+camera_controller = NodePath("Camera")
+object_spawner = NodePath("ObjectSpawner")
+height_detector = NodePath("HeightDetector")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qkmgm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5, 0)
+shadow_enabled = true
+shadow_opacity = 0.6
+
+[node name="Floor" parent="." instance=ExtResource("1_h3e3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="DeathZone" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeathZone"]
+shape = SubResource("WorldBoundaryShape3D_i166f")
+
+[node name="HeightDetector" parent="." instance=ExtResource("5_hnne4")]
+transform = Transform3D(175, 0, 0, 0, 175, 0, 0, 0, 175, 0, 0, 0)
+
+[node name="Camera" parent="." instance=ExtResource("2_nbgty")]
+
+[node name="ObjectSpawner" parent="." instance=ExtResource("4_qkmgm")]
+
+[connection signal="body_entered" from="DeathZone" to="." method="_on_area_3d_body_entered"]
+[connection signal="height_updated" from="HeightDetector" to="." method="_on_height_detector_height_updated"]
