@@ -36,9 +36,9 @@ The player can be moved using the following controls:
 
 For this achievement, I followed the following tutorials:
 
-- [Finite State Machines in Godot 4 in Under 10 Minutes ](https://www.youtube.com/watch?v=ow_Lum-Agbs)
+- [Finite State Machines in Godot 4 in Under 10 Minutes](https://www.youtube.com/watch?v=ow_Lum-Agbs)
 - [Start Your Game Creation Journey Today! (Godot beginner tutorial)](https://www.youtube.com/watch?v=5V9f3MT86M8)
-- [Starter state machines in Godot 4 ](https://www.youtube.com/watch?v=oqFbZoA2lnU)
+- [Starter state machines in Godot 4](https://www.youtube.com/watch?v=oqFbZoA2lnU)
 
 ## Credits
 
