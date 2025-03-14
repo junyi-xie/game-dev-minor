@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://h76gtl1d7p1d"]
+
+[ext_resource type="Script" uid="uid://cqntokcwvewvv" path="res://scripts/height_detector.gd" id="1_g1qmu"]
+
+[node name="HeightDetector" type="RayCast3D"]
+script = ExtResource("1_g1qmu")
