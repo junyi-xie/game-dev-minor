@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="super-frog-bros"
-run/main_scene="uid://8tyha206enli"
+run/main_scene="uid://7hqsxj2613w5"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameManager="*res://utilities/autoload/game_manager.gd"
+SignalManager="*res://utilities/autoload/signal_manager.gd"
 
 [display]
 

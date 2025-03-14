@@ -18,3 +18,8 @@ inspiring text..
   - The game is playable. Minor bugs may be present, but it should largely work as a game.
 - Audio 
   - Music and Sound is added
+
+## Credits
+
+
+Font: https://gowldev.itch.io/squares
