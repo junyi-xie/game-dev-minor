@@ -77,6 +77,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -97,22 +99,23 @@ theme_override_fonts/font = ExtResource("2_fe2o3")
 theme_override_font_sizes/font_size = 12
 text = "Play"
 
-[node name="Settings" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Options" type="Button" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(350, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_fe2o3")
 theme_override_font_sizes/font_size = 12
-text = "Settings"
+text = "Options"
 
-[node name="Exit" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="QuitGame" type="Button" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(350, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_fe2o3")
 theme_override_font_sizes/font_size = 12
-text = "Exit"
+text = "Quit Game"
 
 [connection signal="item_rect_changed" from="." to="." method="_on_item_rect_changed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitGame" to="." method="_on_quit_game_pressed"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ch86s75sgsdcp"
+path="res://.godot/imported/Golden Gleam.wav-6554ab2d141a58d766cc319f60d93a19.sample"
+
+[deps]
+
+source_file="res://assets/fonts/Golden Gleam.wav"
+dest_files=["res://.godot/imported/Golden Gleam.wav-6554ab2d141a58d766cc319f60d93a19.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -13,6 +13,7 @@ func enter() -> void:
 	super()
 	parent.velocity.y = -jump_force
 	parent.can_double_jump = true
+	parent.jump_sound.play()
 
 func process_input(_event: InputEvent) -> State:
 	if Input.is_action_just_pressed("jump") and parent.can_double_jump and parent.velocity.y < 0:

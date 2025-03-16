@@ -1,11 +1,11 @@
 extends Node
 
+signal state_changed(state_name: String)
+
 @export_category("States")
 @export var default_state: State
 
 var current_state: State
-
-signal state_changed(state_name: String)
 
 func init(parent: Player) -> void:
 	for child in get_children():

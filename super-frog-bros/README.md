@@ -21,5 +21,10 @@ inspiring text..
 
 ## Credits
 
+Tileset: https://kenney.nl/assets/pixel-platformer
+
+Character: https://pixelfrog-assets.itch.io/pixel-adventure-1
 
 Font: https://gowldev.itch.io/squares
+
+Soundtrack: https://pizzadoggy.itch.io/minecraft-style-music

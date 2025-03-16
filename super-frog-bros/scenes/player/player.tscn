@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://lbo8ykbscx6b"]
+[gd_scene load_steps=61 format=3 uid="uid://lbo8ykbscx6b"]
 
 [ext_resource type="Script" uid="uid://b5enir4daij57" path="res://scripts/entities/player/player.gd" id="1_7h6ip"]
 [ext_resource type="Texture2D" uid="uid://drgnnh3cp31qj" path="res://assets/sprites/character/Double Jump (32x32).png" id="2_f33sr"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://xmv3w02ym8xy" path="res://scripts/entities/player/states/jump.gd" id="9_je7p5"]
 [ext_resource type="Script" uid="uid://2qim5us2jv5b" path="res://utilities/state_machine/state_machine.gd" id="9_ugbui"]
 [ext_resource type="Script" uid="uid://b7yq8u17tb1fu" path="res://scripts/entities/player/states/fall.gd" id="12_fm80t"]
+[ext_resource type="AudioStream" uid="uid://6mssw26qgnpc" path="res://assets/sfx/jump.mp3" id="13_fcs02"]
 [ext_resource type="Script" uid="uid://dx5oumv5iwe8k" path="res://scripts/entities/player/states/double_jump.gd" id="14_ugbui"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pe35h"]
@@ -355,7 +356,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fesw4"]
-size = Vector2(20, 22)
+size = Vector2(20, 25)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_7h6ip")
@@ -363,11 +364,15 @@ script = ExtResource("1_7h6ip")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_c6b0m")
 animation = &"walk"
-frame_progress = 0.769351
+frame_progress = 0.131724
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_fesw4")
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_fcs02")
+volume_db = 6.0
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state")]
 script = ExtResource("9_ugbui")

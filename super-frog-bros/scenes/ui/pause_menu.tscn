@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://drsjw1xw8i3co"]
+
+[ext_resource type="Script" uid="uid://be57xc46o46dk" path="res://scripts/ui/pause_menu.gd" id="1_0lmf7"]
+[ext_resource type="FontFile" uid="uid://bydt2xc6trnm0" path="res://assets/fonts/Squares.ttf" id="1_6tw0m"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_0lmf7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.156863)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6tw0m")
+theme_override_font_sizes/font_size = 24
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="Resume" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(280, 75)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6tw0m")
+theme_override_font_sizes/font_size = 12
+text = "Resume"
+
+[node name="Options" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(280, 75)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6tw0m")
+theme_override_font_sizes/font_size = 12
+text = "Options"
+
+[node name="Exit" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 75)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6tw0m")
+theme_override_font_sizes/font_size = 12
+text = "Exit"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

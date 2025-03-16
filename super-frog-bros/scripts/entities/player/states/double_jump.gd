@@ -9,6 +9,7 @@ extends State
 func enter() -> void:
 	super()
 	parent.velocity.y = -jump_force
+	parent.jump_sound.play()
 
 func process_physics(delta: float) -> State:
 	parent.velocity.y += gravity * delta

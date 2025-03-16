@@ -6,7 +6,6 @@ var tween: Tween
 @onready var node = $Control
 
 func _ready() -> void:
-	size = get_viewport_rect().size
 	center = Vector2(get_viewport_rect().size.x / 2, get_viewport_rect().size.y / 2)
 
 func _process(delta: float) -> void:
@@ -16,7 +15,7 @@ func _process(delta: float) -> void:
 		return  
 		
 	tween = node.create_tween()
-	tween.tween_property(node, "position", offset, 1.0)
+	tween.tween_property(node, "position", offset, 1.1 * delta)
 
 func _on_item_rect_changed() -> void:
 	center = Vector2(get_viewport_rect().size.x / 2, get_viewport_rect().size.y / 2)
@@ -25,7 +24,11 @@ func _on_item_rect_changed() -> void:
 		node.global_position = center
 
 func _on_play_pressed() -> void:
-	SignalManager.game_play.emit()
+	SceneManager.swap_scenes("LEVEL", get_tree().root, true)
 
-func _on_exit_pressed() -> void:
-	SignalManager.game_exit.emit()
+func _on_options_pressed() -> void:
+	## go to options menu
+	pass
+
+func _on_quit_game_pressed() -> void:
+	get_tree().quit()

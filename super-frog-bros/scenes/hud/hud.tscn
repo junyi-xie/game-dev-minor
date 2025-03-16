@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://botb0f0i032pe"]
+
+[ext_resource type="Texture2D" uid="uid://db4tqnpglkf6c" path="res://assets/sprites/tilemap.png" id="1_48c2t"]
+[ext_resource type="Script" uid="uid://tiqjheqm5ddr" path="res://scripts/game/hud.gd" id="1_c45xl"]
+[ext_resource type="FontFile" uid="uid://bydt2xc6trnm0" path="res://assets/fonts/Squares.ttf" id="2_cgeww"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_c45xl")
+
+[node name="CoinSprite" type="Sprite2D" parent="."]
+position = Vector2(44, 44)
+scale = Vector2(4, 4)
+texture = ExtResource("1_48c2t")
+region_enabled = true
+region_rect = Rect2(212, 136, 12, 12)
+
+[node name="CoinCount" type="Label" parent="."]
+offset_left = 82.0
+offset_top = 23.0
+offset_right = 116.0
+offset_bottom = 66.0
+theme_override_fonts/font = ExtResource("2_cgeww")
+theme_override_font_sizes/font_size = 12
+text = "$"
