@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://2yakw6oh3m4d"]
 
 [ext_resource type="Script" uid="uid://buy1ueyfiedjd" path="res://scripts/game/death_zone.gd" id="1_3owvy"]
-[ext_resource type="AudioStream" uid="uid://dgvqc2i05fte7" path="res://assets/sfx/explode.mp3" id="2_clut3"]
+[ext_resource type="AudioStream" uid="uid://bq6teoupof8jq" path="res://assets/sfx/hurt.mp3" id="2_clut3"]
 
 [node name="DeathZone" type="Area2D"]
 script = ExtResource("1_3owvy")
@@ -10,9 +10,4 @@ script = ExtResource("1_3owvy")
 stream = ExtResource("2_clut3")
 bus = &"SFX"
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.2
-one_shot = true
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

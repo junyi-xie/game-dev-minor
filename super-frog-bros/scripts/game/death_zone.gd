@@ -1,15 +1,14 @@
 extends Area2D
 
 @onready var sound = $AudioStreamPlayer2D
-@onready var timer = $Timer
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		timer.start()
-
-func _on_timer_timeout() -> void:
-	sound.play()
-	await sound.finished
-	
-	get_tree().paused = true
-	SceneManager.swap_scenes("GAME_OVER", get_tree().root)
+		body.get_node("AnimatedSprite2D").play("hit")
+		body.get_node("CollisionShape2D").queue_free()
+		
+		sound.play()
+		await sound.finished
+		
+		get_tree().paused = true
+		SceneManager.swap_scenes("GAME_OVER", get_tree().root)

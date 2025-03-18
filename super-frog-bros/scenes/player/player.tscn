@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://lbo8ykbscx6b"]
+[gd_scene load_steps=62 format=3 uid="uid://lbo8ykbscx6b"]
 
 [ext_resource type="Script" uid="uid://b5enir4daij57" path="res://scripts/entities/player/player.gd" id="1_7h6ip"]
 [ext_resource type="Texture2D" uid="uid://drgnnh3cp31qj" path="res://assets/sprites/character/Double Jump (32x32).png" id="2_f33sr"]
@@ -245,7 +245,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"hit",
-"speed": 20.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -358,13 +358,46 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fesw4"]
 size = Vector2(20, 25)
 
+[sub_resource type="GDScript" id="GDScript_fcs02"]
+script/source = "extends State
+
+@export_category(\"States\")
+@export var idle_state: State
+@export var fall_state: State
+
+var hit_duration: float = 0.5  # Duration of the hit state
+var hit_timer: float = 0.0
+
+func enter() -> void:
+	hit_timer = hit_duration
+	parent.animations.play(\"hit\")
+	parent.velocity.x = -parent.facing_direction * 200  # Example knockback
+	parent.velocity.y = -100  # Example upward knockback
+
+func process_physics(delta: float) -> State:
+	parent.velocity.y += gravity * delta
+	
+	parent.move_and_slide()
+	
+	hit_timer -= delta
+	
+	if hit_timer <= 0:
+		if parent.is_on_floor():
+			return idle_state
+		else:
+			return fall_state
+	
+	return null
+"
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_7h6ip")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_c6b0m")
-animation = &"walk"
-frame_progress = 0.131724
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.0133808
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3.5)
@@ -411,3 +444,7 @@ animation_name = "fall"
 script = ExtResource("14_ugbui")
 fall_state = NodePath("../Fall")
 animation_name = "double_jump"
+
+[node name="Hit" type="Node" parent="StateMachine"]
+script = SubResource("GDScript_fcs02")
+animation_name = "hit"

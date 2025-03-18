@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://8tyha206enli"]
+[gd_scene load_steps=24 format=4 uid="uid://8tyha206enli"]
 
 [ext_resource type="PackedScene" uid="uid://lbo8ykbscx6b" path="res://scenes/player/player.tscn" id="1_h3e3j"]
 [ext_resource type="Texture2D" uid="uid://5085vrmx5r5k" path="res://assets/sprites/tilemap-backgrounds.png" id="1_i166f"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://2yakw6oh3m4d" path="res://scenes/environment/death_zone.tscn" id="6_vpf64"]
 [ext_resource type="PackedScene" uid="uid://ckcvronkk8ibe" path="res://scenes/enemies/bug.tscn" id="7_wcngd"]
 [ext_resource type="PackedScene" uid="uid://botb0f0i032pe" path="res://scenes/hud/hud.tscn" id="9_sytrn"]
+[ext_resource type="PackedScene" uid="uid://cyhnmdvmvhh23" path="res://scenes/environment/spike.tscn" id="10_tf2q7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vpf64"]
 texture = ExtResource("1_i166f")
@@ -569,6 +570,12 @@ tile_set = SubResource("TileSet_vpf64")
 [node name="Platform" parent="Platforms" instance=ExtResource("3_qkmgm")]
 position = Vector2(946, 478)
 
+[node name="Platform4" parent="Platforms" instance=ExtResource("3_qkmgm")]
+position = Vector2(2443, 497)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("3_qkmgm")]
+position = Vector2(3211, 487)
+
 [node name="Platform2" parent="Platforms" instance=ExtResource("3_qkmgm")]
 position = Vector2(680, 612)
 
@@ -607,6 +614,108 @@ position = Vector2(136, 583)
 [node name="Coin6" parent="Coins" instance=ExtResource("4_hnne4")]
 position = Vector2(111, 511)
 
+[node name="Coin7" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(464, 520)
+
+[node name="Coin8" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(528, 441)
+
+[node name="Coin9" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(606, 524)
+
+[node name="Coin10" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(1064, 376)
+
+[node name="Coin11" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(1193, 276)
+
+[node name="Coin12" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(1210, 276)
+
+[node name="Coin13" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(1228, 276)
+
+[node name="Coin14" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(1103, 529)
+
+[node name="Coin15" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(1336, 485)
+
+[node name="Coin16" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(1490, 436)
+
+[node name="Coin17" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(1688, 240)
+
+[node name="Coin18" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(1709, 240)
+
+[node name="Coin19" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(1731, 240)
+
+[node name="Coin20" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(1731, 240)
+
+[node name="Coin21" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(1920, 389)
+
+[node name="Coin22" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(2566, 316)
+
+[node name="Coin23" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(2591, 316)
+
+[node name="Coin24" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(2618, 316)
+
+[node name="Coin25" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(2618, 285)
+
+[node name="Coin26" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(2589, 283)
+
+[node name="Coin27" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(2570, 284)
+
+[node name="Coin28" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(2315, 387)
+
+[node name="Coin29" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(2566, 564)
+
+[node name="Coin30" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(2627, 564)
+
+[node name="Coin31" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(2798, 514)
+
+[node name="Coin32" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(3332, 541)
+
+[node name="Coin33" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(3372, 539)
+
+[node name="Coin34" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(3415, 539)
+
+[node name="Coin35" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(3469, 540)
+
+[node name="Coin36" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(3512, 541)
+
+[node name="Coin37" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(3292, 541)
+
+[node name="Coin38" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(3309, 509)
+
+[node name="Coin39" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(3353, 507)
+
+[node name="Coin40" parent="Coins" instance=ExtResource("4_hnne4")]
+position = Vector2(3394, 505)
+
 [node name="Player" parent="." instance=ExtResource("1_h3e3j")]
 position = Vector2(10, 588)
 
@@ -621,6 +730,64 @@ position = Vector2(134, 735)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
 shape = SubResource("WorldBoundaryShape2D_vpf64")
+
+[node name="Traps" type="Node2D" parent="."]
+
+[node name="Spike" parent="Traps" instance=ExtResource("10_tf2q7")]
+position = Vector2(-35, 603)
+
+[node name="Spike3" parent="Traps" instance=ExtResource("10_tf2q7")]
+position = Vector2(537, 476)
+
+[node name="Spike4" parent="Traps" instance=ExtResource("10_tf2q7")]
+position = Vector2(537, 500)
+rotation = 3.14159
+
+[node name="Spike5" parent="Traps" instance=ExtResource("10_tf2q7")]
+position = Vector2(1033, 420)
+rotation = 3.14159
+
+[node name="Spike6" parent="Traps" instance=ExtResource("10_tf2q7")]
+position = Vector2(1268, 555)
+
+[node name="Spike7" parent="Traps" instance=ExtResource("10_tf2q7")]
+position = Vector2(1481, 460)
+
+[node name="Spike8" parent="Traps" instance=ExtResource("10_tf2q7")]
+position = Vector2(1707, 428)
+
+[node name="Spike9" parent="Traps" instance=ExtResource("10_tf2q7")]
+position = Vector2(1836, 373)
+rotation = 3.14159
+
+[node name="Spike10" parent="Traps" instance=ExtResource("10_tf2q7")]
+position = Vector2(2171, 478)
+rotation = 4.71239
+
+[node name="Spike11" parent="Traps" instance=ExtResource("10_tf2q7")]
+position = Vector2(1941, 479)
+rotation = 1.5708
+
+[node name="Spike12" parent="Traps" instance=ExtResource("10_tf2q7")]
+position = Vector2(2344, 427)
+
+[node name="Spike13" parent="Traps" instance=ExtResource("10_tf2q7")]
+position = Vector2(2539, 470)
+rotation = 4.71239
+
+[node name="Spike14" parent="Traps" instance=ExtResource("10_tf2q7")]
+position = Vector2(2437, 558)
+rotation = 1.5708
+
+[node name="Spike15" parent="Traps" instance=ExtResource("10_tf2q7")]
+position = Vector2(2488, 603)
+
+[node name="Spike16" parent="Traps" instance=ExtResource("10_tf2q7")]
+position = Vector2(2696, 603)
+
+[node name="Spike2" parent="Traps" instance=ExtResource("10_tf2q7")]
+position = Vector2(-187, 555)
+rotation = 1.5708
 
 [node name="Enemies" type="Node2D" parent="."]
 
