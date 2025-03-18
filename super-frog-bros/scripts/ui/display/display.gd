@@ -1,13 +1,6 @@
 extends Control
 
-@onready var resolution_button: OptionButton = $MarginContainer/VBoxContainer/Resolution/ResolutionButton
-@onready var full_screen_button: CheckButton = $MarginContainer/VBoxContainer/FullScreen/FullScreenCheckButton
-@onready var borderless_button: CheckButton = $MarginContainer/VBoxContainer/Borderless/BorderlessCheckButton
-
 const RESOLUTIONS: Dictionary = {
-	"640x360": Vector2i(640, 360),
-	"800x450": Vector2i(800, 450),
-	"854x480": Vector2i(854, 480),
 	"1024x576": Vector2i(1024, 576),
 	"1152x648": Vector2i(1152, 648),
 	"1280x720": Vector2i(1280, 720),
@@ -16,6 +9,10 @@ const RESOLUTIONS: Dictionary = {
 	"1920x1080": Vector2i(1920, 1080),
 	"2560x1440": Vector2i(2560, 1440)
 }
+
+@onready var resolution_button: OptionButton = $MarginContainer/VBoxContainer/Resolution/ResolutionButton
+@onready var full_screen_button: CheckButton = $MarginContainer/VBoxContainer/FullScreen/FullScreenCheckButton
+@onready var borderless_button: CheckButton = $MarginContainer/VBoxContainer/Borderless/BorderlessCheckButton
 
 func _ready() -> void:
 	for resolution in RESOLUTIONS:
@@ -27,10 +24,10 @@ func _on_resolution_button_item_selected(index: int) -> void:
 	
 	var screen_index = DisplayServer.window_get_current_screen()
 	var screen_size = DisplayServer.screen_get_size(screen_index)
-
+	
 	var new_position = (screen_size - new_size) / 2
 	DisplayServer.window_set_position(new_position)
-
+	
 	resolution_button.selected = index
 
 func _on_full_screen_check_button_toggled(toggled_on: bool) -> void:

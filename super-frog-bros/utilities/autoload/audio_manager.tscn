@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bjqyqhv4qpy8a" path="res://utilities/autoload/audio_manager.gd" id="1_o8v6k"]
 
-[node name="Soundtrack" type="AudioStreamPlayer"]
+[node name="AudioManager" type="AudioStreamPlayer"]
+bus = &"Music"
 script = ExtResource("1_o8v6k")
 path_to_music_folder = "assets/music"
 

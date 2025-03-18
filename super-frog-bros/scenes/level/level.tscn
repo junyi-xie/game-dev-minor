@@ -617,7 +617,7 @@ limit_smoothed = true
 position_smoothing_speed = 2.0
 
 [node name="DeathZone" parent="." instance=ExtResource("6_vpf64")]
-position = Vector2(111, 642)
+position = Vector2(134, 735)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
 shape = SubResource("WorldBoundaryShape2D_vpf64")

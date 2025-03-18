@@ -372,7 +372,7 @@ shape = SubResource("RectangleShape2D_fesw4")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_fcs02")
-volume_db = 6.0
+bus = &"SFX"
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state")]
 script = ExtResource("9_ugbui")

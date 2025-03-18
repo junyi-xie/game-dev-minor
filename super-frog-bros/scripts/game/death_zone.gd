@@ -8,5 +8,8 @@ func _on_body_entered(body: Node2D) -> void:
 		timer.start()
 
 func _on_timer_timeout() -> void:
+	sound.play()
+	await sound.finished
+	
 	get_tree().paused = true
 	SceneManager.swap_scenes("GAME_OVER", get_tree().root)

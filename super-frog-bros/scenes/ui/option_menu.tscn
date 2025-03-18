@@ -52,11 +52,10 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_5jsow")
 theme_override_font_sizes/font_size = 12
 tab_alignment = 1
-current_tab = 3
+current_tab = 0
 clip_tabs = false
 
 [node name="Display" parent="MarginContainer/VBoxContainer/TabContainer" instance=ExtResource("3_enpjp")]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -71,6 +70,7 @@ layout_mode = 2
 metadata/_tab_index = 2
 
 [node name="KeyBinding" parent="MarginContainer/VBoxContainer/TabContainer" instance=ExtResource("6_338nn")]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 
