@@ -1,13 +1,11 @@
 # It's the little things - Game Programming | Platinum 1
 
 inspiring text..
-https://www.youtube.com/watch?v=ZDPM45cHHlI
-
 ## Requirements
 
 - Persistent data 
   - There is data that gets stored to disk
-- There is data that gets stored to disk
+- Main menu 
   - Does the main menu has a start game/exit and settings option
 - Pause menu 
   - Pause menu has continue and exit option

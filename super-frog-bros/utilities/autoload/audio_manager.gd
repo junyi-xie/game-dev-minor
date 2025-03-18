@@ -7,7 +7,7 @@ var master_bus_index: int
 var music_bus_index: int
 var sfx_bus_index: int
 
-var music_files: Array = []
+var music_files: Array
 
 func _ready() -> void:
 	master_bus_index = AudioServer.get_bus_index("Master")

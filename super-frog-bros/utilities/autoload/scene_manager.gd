@@ -17,7 +17,7 @@ func swap_scenes(scene_to_load, load_into: Node, clear_existing_scenes: bool = f
 		
 	if clear_existing_scenes:
 		for child in load_into.get_children():
-			if not child.name in ["GameManager", "SceneManager", "AudioManager"]: ## i was braindead, not efficient this way
+			if not child.name in ["GameManager", "SceneManager", "AudioManager", "OptionManager"]: ## i was braindead, not efficient this way
 				child.queue_free()
 		
 	var new_scene = scenes[scene_to_load].instantiate()
