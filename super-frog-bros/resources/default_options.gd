@@ -2,7 +2,7 @@ extends Resource
 
 const DEFAULT: Dictionary = {
 	"display": {
-		"resolution": "1024x576",
+		"resolution": "1152x648",
 		"full_screen": false,
 		"borderless": false
 	},
