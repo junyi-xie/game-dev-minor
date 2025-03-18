@@ -1,6 +1,7 @@
 # It's the little things - Game Programming | Platinum 1
 
-inspiring text..
+This project is a continuation of [Finite State Machine](https://github.com/junyi-xie/game-dev-minor/tree/main/finite-state-machine), with the goal of transforming the prototype into a 'publishing-ready' game.
+
 ## Requirements
 
 - Persistent data 
@@ -17,6 +18,13 @@ inspiring text..
   - The game is playable. Minor bugs may be present, but it should largely work as a game.
 - Audio 
   - Music and Sound is added
+
+## Tutorials
+
+For this achievement, I followed the following tutorials:
+
+- [Easy Input Settings Menu](https://www.youtube.com/watch?v=ZDPM45cHHlI)
+- [Save and Load Settings in Godot 4 with ConfigFile](https://www.youtube.com/watch?v=tfqJjDw0o7Y)
 
 ## Credits
 
