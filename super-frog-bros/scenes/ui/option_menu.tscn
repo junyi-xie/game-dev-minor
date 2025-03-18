@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://y8bff5qgdumd"]
+
+[ext_resource type="Script" uid="uid://n7gr2ywaukhd" path="res://scripts/ui/option_menu.gd" id="1_ktt30"]
+[ext_resource type="FontFile" uid="uid://bydt2xc6trnm0" path="res://assets/fonts/Squares.ttf" id="2_5jsow"]
+[ext_resource type="PackedScene" uid="uid://2056tpr53pcq" path="res://scenes/ui/tabs/display.tscn" id="3_enpjp"]
+[ext_resource type="PackedScene" uid="uid://cb1liqjgx8iei" path="res://scenes/ui/tabs/graphics.tscn" id="4_br56t"]
+[ext_resource type="PackedScene" uid="uid://ds85ty7g5kx0o" path="res://scenes/ui/tabs/audio.tscn" id="5_jvtuq"]
+[ext_resource type="PackedScene" uid="uid://pm1d4b6rh0jj" path="res://scenes/ui/tabs/key_binding.tscn" id="6_338nn"]
+
+[sub_resource type="Gradient" id="Gradient_87aya"]
+offsets = PackedFloat32Array(0.00324675, 1)
+colors = PackedColorArray(0.403922, 0.647059, 0.388235, 1, 0.062465, 0.170364, 0.100488, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5jsow"]
+gradient = SubResource("Gradient_87aya")
+
+[node name="OptionMenu" type="CanvasLayer"]
+script = ExtResource("1_ktt30")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_5jsow")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5jsow")
+theme_override_font_sizes/font_size = 18
+text = "Options"
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5jsow")
+theme_override_font_sizes/font_size = 12
+tab_alignment = 1
+current_tab = 0
+clip_tabs = false
+
+[node name="Display" parent="MarginContainer/VBoxContainer/TabContainer" instance=ExtResource("3_enpjp")]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Graphics" parent="MarginContainer/VBoxContainer/TabContainer" instance=ExtResource("4_br56t")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Audio" parent="MarginContainer/VBoxContainer/TabContainer" instance=ExtResource("5_jvtuq")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="KeyBinding" parent="MarginContainer/VBoxContainer/TabContainer" instance=ExtResource("6_338nn")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_constants/separation = 20
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 65)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5jsow")
+theme_override_font_sizes/font_size = 12
+text = "Back"
+
+[node name="Save" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 65)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5jsow")
+theme_override_font_sizes/font_size = 12
+text = "Save"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Save" to="." method="_on_save_pressed"]

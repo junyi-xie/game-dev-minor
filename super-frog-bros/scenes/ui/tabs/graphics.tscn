@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb1liqjgx8iei"]
+
+[ext_resource type="Script" uid="uid://qseoroa6qafm" path="res://scripts/ui/graphics/graphics.gd" id="1_ntdu4"]
+[ext_resource type="FontFile" uid="uid://bydt2xc6trnm0" path="res://assets/fonts/Squares.ttf" id="2_v8y25"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ntdu4"]
+font = ExtResource("2_v8y25")
+font_size = 6
+
+[node name="Graphics" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ntdu4")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 74.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VSync" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VSync"]
+layout_mode = 2
+text = "V-Sync"
+label_settings = SubResource("LabelSettings_ntdu4")
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/VSync"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSyncCheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/VSync"]
+layout_mode = 2
+
+[connection signal="toggled" from="MarginContainer/VBoxContainer/VSync/VSyncCheckButton" to="." method="_on_v_sync_check_button_toggled"]

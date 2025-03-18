@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=3 uid="uid://2056tpr53pcq"]
+
+[ext_resource type="Script" uid="uid://cig3i8h83e5n4" path="res://scripts/ui/display/display.gd" id="1_ph8n0"]
+[ext_resource type="FontFile" uid="uid://bydt2xc6trnm0" path="res://assets/fonts/Squares.ttf" id="2_f61r8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8dbxp"]
+font = ExtResource("2_f61r8")
+font_size = 6
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ph8n0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f61r8"]
+font = ExtResource("2_f61r8")
+font_size = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_qwjcr"]
+font = ExtResource("2_f61r8")
+font_size = 6
+
+[node name="Display" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ph8n0")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 74.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Resolution" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Resolution"]
+layout_mode = 2
+text = "Resolution"
+label_settings = SubResource("LabelSettings_8dbxp")
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/Resolution"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ResolutionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/Resolution"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_f61r8")
+theme_override_font_sizes/font_size = 6
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ph8n0")
+
+[node name="FullScreen" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/FullScreen"]
+layout_mode = 2
+text = "Full Screen"
+label_settings = SubResource("LabelSettings_f61r8")
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/FullScreen"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FullScreenCheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/FullScreen"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ph8n0")
+
+[node name="Borderless" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Borderless"]
+layout_mode = 2
+text = "Borderless"
+label_settings = SubResource("LabelSettings_qwjcr")
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/Borderless"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BorderlessCheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/Borderless"]
+layout_mode = 2
+
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Resolution/ResolutionButton" to="." method="_on_resolution_button_item_selected"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/FullScreen/FullScreenCheckButton" to="." method="_on_full_screen_check_button_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Borderless/BorderlessCheckButton" to="." method="_on_borderless_check_button_toggled"]
