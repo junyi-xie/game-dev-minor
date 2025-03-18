@@ -8,8 +8,7 @@ func _on_resume_pressed() -> void:
 	get_tree().paused = false
 
 func _on_options_pressed() -> void:
-	## load options menu
-	pass
+	SceneManager.swap_scenes("OPTION_MENU", get_tree().root)
 
 func _on_exit_pressed() -> void:
 	SceneManager.swap_scenes("MAIN_MENU", get_tree().root, true)

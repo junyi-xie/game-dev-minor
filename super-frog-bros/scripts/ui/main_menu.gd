@@ -27,8 +27,7 @@ func _on_play_pressed() -> void:
 	SceneManager.swap_scenes("LEVEL", get_tree().root, true)
 
 func _on_options_pressed() -> void:
-	## go to options menu
-	pass
+	SceneManager.swap_scenes("OPTION_MENU", get_tree().root)
 
 func _on_quit_game_pressed() -> void:
 	get_tree().quit()

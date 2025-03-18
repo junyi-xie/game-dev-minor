@@ -1,7 +1,5 @@
 extends Node
 
-signal state_changed(state_name: String)
-
 @export_category("States")
 @export var default_state: State
 
@@ -19,8 +17,6 @@ func change_state(new_state: State) -> void:
 		
 	current_state = new_state
 	current_state.enter()
-	
-	state_changed.emit(current_state.name)
 
 func process_physics(delta: float) -> void:
 	var new_state = current_state.process_physics(delta)

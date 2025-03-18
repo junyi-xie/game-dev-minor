@@ -400,10 +400,11 @@ fall_state = NodePath("../Fall")
 double_jump_state = NodePath("../DoubleJump")
 animation_name = "jump"
 
-[node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "walk_state")]
+[node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "walk_state", "double_jump_state")]
 script = ExtResource("12_fm80t")
 idle_state = NodePath("../Idle")
 walk_state = NodePath("../Walk")
+double_jump_state = NodePath("../DoubleJump")
 animation_name = "fall"
 
 [node name="DoubleJump" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state")]

@@ -1,6 +1,7 @@
 # It's the little things - Game Programming | Platinum 1
 
 inspiring text..
+https://www.youtube.com/watch?v=ZDPM45cHHlI
 
 ## Requirements
 

@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://vi83nr4v8wfk" path="res://scripts/ui/main_menu.gd" id="1_sl1te"]
 [ext_resource type="FontFile" uid="uid://bydt2xc6trnm0" path="res://assets/fonts/Squares.ttf" id="2_fe2o3"]
 
-[sub_resource type="Gradient" id="Gradient_87aya"]
+[sub_resource type="Gradient" id="Gradient_fe2o3"]
 offsets = PackedFloat32Array(0.00324675, 1)
 colors = PackedColorArray(0.403922, 0.647059, 0.388235, 1, 0.062465, 0.170364, 0.100488, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_sl1te"]
-gradient = SubResource("Gradient_87aya")
+gradient = SubResource("Gradient_fe2o3")
 
 [sub_resource type="LabelSettings" id="LabelSettings_1g8jr"]
 font = ExtResource("2_fe2o3")
