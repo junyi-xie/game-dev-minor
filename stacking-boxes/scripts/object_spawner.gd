@@ -11,7 +11,7 @@ var object_position: Vector3
 
 func _ready() -> void:
 	
-	var files = DirAccess.get_files_at(path)
+	var files = ResourceLoader.list_directory(path)
 	
 	if files.is_empty():
 		return
