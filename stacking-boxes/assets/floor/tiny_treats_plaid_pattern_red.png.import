@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6d51ht4fsyb5"
 path.s3tc="res://.godot/imported/tiny_treats_plaid_pattern_red.png-15525da27c45517e6d8a02b6477ccfbf.s3tc.ctex"
+path.etc2="res://.godot/imported/tiny_treats_plaid_pattern_red.png-15525da27c45517e6d8a02b6477ccfbf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/floor/tiny_treats_plaid_pattern_red.png"
-dest_files=["res://.godot/imported/tiny_treats_plaid_pattern_red.png-15525da27c45517e6d8a02b6477ccfbf.s3tc.ctex"]
+dest_files=["res://.godot/imported/tiny_treats_plaid_pattern_red.png-15525da27c45517e6d8a02b6477ccfbf.s3tc.ctex", "res://.godot/imported/tiny_treats_plaid_pattern_red.png-15525da27c45517e6d8a02b6477ccfbf.etc2.ctex"]
 
 [params]
 
