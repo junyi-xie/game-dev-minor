@@ -30,23 +30,17 @@ func _on_finished() -> void:
 func load_music_files() -> void:
 	music_files.clear()
 	
-	var dir = DirAccess.open("res://" + path_to_music_folder + "/")
+	var dir = ResourceLoader.list_directory(path_to_music_folder + "/")
 	
+	print(dir)
 	if not dir:
 		return
 	
-	dir.list_dir_begin()
-	
-	var file_name = dir.get_next()
-	while file_name != "":
-		if file_name.get_extension().to_lower() in music_formats:
-			var file_path = path_to_music_folder + "/" + file_name
-			var audio_stream = load(file_path)
+	for file in dir:
+		if file.get_extension().to_lower() in music_formats:
+			var audio_stream = ResourceLoader.load(path_to_music_folder + "/" +  file)
 			if audio_stream:
 				music_files.append(audio_stream)
-		file_name = dir.get_next()
-		
-	dir.list_dir_end()
 
 func play_random_song() -> void:
 	if music_files.size() > 0:
