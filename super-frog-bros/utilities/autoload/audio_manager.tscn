@@ -5,6 +5,6 @@
 [node name="AudioManager" type="AudioStreamPlayer"]
 bus = &"Music"
 script = ExtResource("1_o8v6k")
-path_to_music_folder = "assets/music"
+path_to_music_folder = "res://assets/music/"
 
 [connection signal="finished" from="." to="." method="_on_finished"]

@@ -30,15 +30,14 @@ func _on_finished() -> void:
 func load_music_files() -> void:
 	music_files.clear()
 	
-	var dir = ResourceLoader.list_directory(path_to_music_folder + "/")
+	var dir = ResourceLoader.list_directory(path_to_music_folder)
 	
-	print(dir)
 	if not dir:
 		return
 	
 	for file in dir:
 		if file.get_extension().to_lower() in music_formats:
-			var audio_stream = ResourceLoader.load(path_to_music_folder + "/" +  file)
+			var audio_stream = ResourceLoader.load(path_to_music_folder + file)
 			if audio_stream:
 				music_files.append(audio_stream)
 

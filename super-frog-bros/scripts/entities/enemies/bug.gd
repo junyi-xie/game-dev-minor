@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 		
 	steps_taken += speed * delta / tile_size
 	
-func reverse_direction():
+func reverse_direction() -> void:
 	animated_sprite.flip_h = direction == -1
 	direction *= -1
 	steps_taken = 0
