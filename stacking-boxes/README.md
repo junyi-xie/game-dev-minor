@@ -4,7 +4,7 @@
 
 ## Preview
 
-<img src="https://github.com/junyi-xie/game-dev-minor/blob/main/stacking-boxes/preview.png" />
+![Demonstration of gameplay](https://github.com/junyi-xie/game-dev-minor/blob/main/stacking-boxes/gameplay.gif)
 
 ## Controls
 
