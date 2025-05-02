@@ -11,7 +11,7 @@ func _ready() -> void:
 	_load()
 	
 	if options.is_empty():
-		options = default_options.DEFAULT
+		options = default_options.DEFAULT.duplicate(true)
 		
 	_apply()
 
