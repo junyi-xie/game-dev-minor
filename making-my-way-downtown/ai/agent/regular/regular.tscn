@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0gan53aegwcm"]
+[gd_scene load_steps=7 format=3 uid="uid://d0gan53aegwcm"]
 
 [ext_resource type="PackedScene" uid="uid://sxa1duj5x08a" path="res://ai/agent.tscn" id="1_j516e"]
+[ext_resource type="Script" uid="uid://ovcm0y34gl1y" path="res://ai/agent/regular/regular.gd" id="2_1tsbc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1tsbc"]
 albedo_color = Color(1, 1, 0, 1)
@@ -18,12 +19,17 @@ height = 4.0
 viewport_path = NodePath("SubViewport")
 
 [node name="Regular" instance=ExtResource("1_j516e")]
+script = ExtResource("2_1tsbc")
 
 [node name="MeshInstance3D" parent="." index="0"]
 mesh = SubResource("CapsuleMesh_1tlj1")
 
 [node name="CollisionShape3D" parent="." index="1"]
 shape = SubResource("CapsuleShape3D_oskgh")
+
+[node name="NavigationAgent3D" parent="." index="2"]
+path_desired_distance = 2.0
+debug_enabled = true
 
 [node name="Label" parent="SubViewport" index="0"]
 text = "Regular"

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://uvi7xjr6j7nk"]
+
+[ext_resource type="FontFile" uid="uid://b7lkbig7ibh02" path="res://resources/fonts/Cream Yoghurt.otf" id="1_ols5k"]
+
+[resource]
+default_font = ExtResource("1_ols5k")
+default_font_size = 24

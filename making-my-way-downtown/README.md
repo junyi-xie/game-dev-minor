@@ -16,3 +16,4 @@
 ## Credits
 
 Free look camera: https://github.com/adamviola/simple-free-look-camera
+Cream Yogurt font: https://www.dafont.com/cream-yoghurt.font
