@@ -2,6 +2,10 @@
 
 Basic navigation mesh implementation with regular and patrolling agents in Godot 4.4.
 
+## Preview
+
+<img src="https://github.com/junyi-xie/game-dev-minor/blob/main/making-my-way-downtown/preview.gif" />
+
 ## Controls
 
 The player can be moved using the following controls:
