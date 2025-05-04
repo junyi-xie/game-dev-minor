@@ -29,7 +29,6 @@ shape = SubResource("CapsuleShape3D_oskgh")
 
 [node name="NavigationAgent3D" parent="." index="2"]
 path_desired_distance = 2.0
-debug_enabled = true
 
 [node name="Label" parent="SubViewport" index="0"]
 text = "Regular"

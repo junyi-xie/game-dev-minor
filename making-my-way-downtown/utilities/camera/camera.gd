@@ -3,15 +3,17 @@ extends FreeLookCamera
 @onready var ray_cast_3d: RayCast3D = $RayCast3D
 
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("left_click"):
-		_handle_left_click()
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			_select_or_move_agent()
 
-	super._process(delta)
+	super._input(event)
 
 
-func _handle_left_click() -> void:
+func _select_or_move_agent() -> void:
 	_mouse_position = get_viewport().get_mouse_position()
+
 	ray_cast_3d.target_position = project_local_ray_normal(_mouse_position) * 100
 	ray_cast_3d.force_raycast_update()
 

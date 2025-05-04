@@ -17,6 +17,7 @@ script = ExtResource("1_646aa")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 unique_name_in_owner = true
+debug_enabled = true
 
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true

@@ -1,6 +1,5 @@
 extends Agent
 
-var direction: Vector3
 var next_position: Vector3
 
 
