@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtvjbc418tbdo"]
+
+[ext_resource type="Theme" uid="uid://uvi7xjr6j7nk" path="res://resources/main_theme.tres" id="1_ks8t7"]
+[ext_resource type="StyleBox" uid="uid://bqihqv7op44td" path="res://resources/styleboxes/button_normal.tres" id="1_nb4k0"]
+[ext_resource type="Script" uid="uid://bmxj8fmcj3fo4" path="res://ui/ui.gd" id="1_wl5ax"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_wl5ax")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_ks8t7")
+text = "Current selected agent: None"
+
+[node name="Buttons" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Regular" type="Button" parent="MarginContainer/Buttons"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+mouse_force_pass_scroll_events = false
+theme = ExtResource("1_ks8t7")
+theme_override_styles/normal = ExtResource("1_nb4k0")
+text = "Regular Agent"
+
+[node name="Patrol" type="Button" parent="MarginContainer/Buttons"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+theme = ExtResource("1_ks8t7")
+theme_override_styles/normal = ExtResource("1_nb4k0")
+text = "Patrol Agent"
+
+[connection signal="pressed" from="MarginContainer/Buttons/Regular" to="." method="_on_spawn_regular_agent"]
+[connection signal="pressed" from="MarginContainer/Buttons/Patrol" to="." method="_on_spawn_patrol_agent"]
