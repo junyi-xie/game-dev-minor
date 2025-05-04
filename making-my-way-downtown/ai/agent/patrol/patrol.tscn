@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://buku4pgku1xip"]
 
-[ext_resource type="PackedScene" uid="uid://sxa1duj5x08a" path="res://ai/agent.tscn" id="1_fjkio"]
+[ext_resource type="PackedScene" uid="uid://sxa1duj5x08a" path="res://ai/agent/agent.tscn" id="1_fjkio"]
 [ext_resource type="Script" uid="uid://m07cf6o51cby" path="res://ai/agent/patrol/patrol.gd" id="2_xp7in"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fjkio"]

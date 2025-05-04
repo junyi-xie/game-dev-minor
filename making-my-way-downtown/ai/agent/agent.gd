@@ -12,7 +12,3 @@ var direction: Vector3
 
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
-
-
-func move_agent_to(_position: Vector3) -> void:
-	pass
