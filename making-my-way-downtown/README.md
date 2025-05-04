@@ -1,6 +1,14 @@
 # Making my way downtown - Artificial Intelligence | Gold 1
 
-... some inspiring text
+Basic navigation mesh implementation with regular and patrolling agents in Godot 4.4.
+
+## Controls
+
+The player can be moved using the following controls:
+- W / S – Move forward and backward
+- A / D – Move left and right
+- Q / E – Move up and down
+- Right Mouse Button (Hold) – Rotate the camera
 
 ## Requirements
 
@@ -16,4 +24,5 @@
 ## Credits
 
 Free look camera: https://github.com/adamviola/simple-free-look-camera
+
 Cream Yogurt font: https://www.dafont.com/cream-yoghurt.font
