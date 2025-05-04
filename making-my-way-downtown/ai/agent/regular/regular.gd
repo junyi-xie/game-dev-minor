@@ -15,5 +15,5 @@ func _physics_process(delta: float) -> void:
 	super._physics_process(delta)
 
 
-func move_agent_to(position: Vector3) -> void:
-	next_position = position
+func move_agent_to(target_position: Vector3) -> void:
+	next_position = target_position

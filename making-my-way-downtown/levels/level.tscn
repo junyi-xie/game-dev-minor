@@ -1,7 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://bhkss8dem8cvk"]
+[gd_scene load_steps=17 format=3 uid="uid://bhkss8dem8cvk"]
 
 [ext_resource type="Script" uid="uid://dvpaxxajo5ofh" path="res://utilities/camera/camera.gd" id="1_80vhd"]
-[ext_resource type="PackedScene" uid="uid://d0gan53aegwcm" path="res://ai/agent/regular/regular.tscn" id="3_5mrsh"]
 [ext_resource type="PackedScene" uid="uid://dtvjbc418tbdo" path="res://ui/ui.tscn" id="3_cwqvt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_umreq"]
@@ -63,10 +62,9 @@ environment = SubResource("Environment_80vhd")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
 
-[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("agent")]
+[node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.642787, 0.766044, 0, -0.766044, 0.642787, 0, 40, 40)
 script = ExtResource("1_80vhd")
-agent = NodePath("../Regular")
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
 
@@ -121,8 +119,5 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D5/StaticBody3D"]
 shape = SubResource("BoxShape3D_5mrsh")
-
-[node name="Regular" parent="." instance=ExtResource("3_5mrsh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
 [node name="UI" parent="." instance=ExtResource("3_cwqvt")]

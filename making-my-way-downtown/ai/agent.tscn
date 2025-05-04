@@ -16,11 +16,13 @@ script = ExtResource("1_646aa")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+unique_name_in_owner = true
 
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
 
 [node name="Label" type="Label" parent="SubViewport"]
+unique_name_in_owner = true
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
