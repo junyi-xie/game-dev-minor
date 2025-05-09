@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://brdfvvu4my2qf"]
+
+[ext_resource type="Script" uid="uid://ctjkyvoaq3yu8" path="res://utils/camera/camera.gd" id="1_80vhd"]
+[ext_resource type="Script" uid="uid://dajd2f1atsfs8" path="res://levels/level.gd" id="1_cwqvt"]
+[ext_resource type="MeshLibrary" uid="uid://b0fdhpmtn5qs2" path="res://tiles/tiles.tres" id="3_5mrsh"]
+[ext_resource type="FontFile" uid="uid://cm1vyunkv5bcy" path="res://resources/fonts/Cream Yoghurt.otf" id="4_5mrsh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_80vhd"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_hjsbj"]
+sky_material = SubResource("ProceduralSkyMaterial_80vhd")
+
+[sub_resource type="Environment" id="Environment_cwqvt"]
+background_mode = 2
+sky = SubResource("Sky_hjsbj")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_cwqvt")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cwqvt")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 25, 30, 50)
+script = ExtResource("1_80vhd")
+
+[node name="GridMap" type="GridMap" parent="."]
+unique_name_in_owner = true
+mesh_library = ExtResource("3_5mrsh")
+cell_size = Vector3(1, 1, 1)
+cell_center_y = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("4_5mrsh")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Press [color=black][Space][/color] or [color=black][Enter][/color] to generate a dungeon
+
+
+[color=#231942]• Room[/color]
+
+[color=#5e548e]• Corrider[/color]
+
+[color=#9f86c0]• Door[/color]"
+fit_content = true
