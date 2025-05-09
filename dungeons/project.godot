@@ -14,3 +14,7 @@ config/name="Dungeons"
 run/main_scene="uid://brdfvvu4my2qf"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
