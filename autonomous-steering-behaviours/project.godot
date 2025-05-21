@@ -1,0 +1,33 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Autonomous Steering Behaviours"
+run/main_scene="uid://ckbgvxltywyo6"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://utilities/autoload/GameManager.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
+
+[layer_names]
+
+2d_physics/layer_1="Entity"
+2d_physics/layer_2="World"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true

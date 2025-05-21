@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://wfmdj47bj4wc"]
+
+[ext_resource type="Texture2D" uid="uid://em7wntqss45b" path="res://background.png" id="1_dsb53"]
+[ext_resource type="PackedScene" uid="uid://dkyxs54t43p2k" path="res://boids/boid.tscn" id="3_krba5"]
+
+[node name="LevelSteering" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(320, 320)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(320, 320)
+texture = ExtResource("1_dsb53")
+region_enabled = true
+region_rect = Rect2(32, 32, 640, 640)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PlayerSteering" parent="." instance=ExtResource("3_krba5")]
