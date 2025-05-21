@@ -160,10 +160,10 @@ func _on_velocity_computed(safe_velocity: Vector2) -> void:
 	var flock_force: Vector2 = compute_flocking()
 	var steering_force: Vector2
 
-	match steering_mode:
-		SteeringMode.SEEK:
+	match GameManager.steering_mode:
+		GameManager.SteeringMode.SEEK:
 			steering_force = get_seek_force()
-		SteeringMode.FLEE:
+		GameManager.SteeringMode.FLEE:
 			steering_force = get_flee_force()
 		_:
 			steering_force = Vector2.ZERO
