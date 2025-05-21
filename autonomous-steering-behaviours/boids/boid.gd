@@ -1,16 +1,19 @@
 extends CharacterBody2D
 
+enum SteeringMode { FLEE, SEEK }
+
 @export_group("Pathfinding")
 @export var tolerance: float = 2.0
 
 @export_group("Movement")
-@export var speed: float = 250.0
+@export var speed: float = 350.0
 @export var mass: float = 1.2
 @export var max_steering: float = 200.0
+@export var steering_mode: SteeringMode = SteeringMode.SEEK
 
 @export_group("Flocking Behaviour")
-@export var separation_weight: float = 1.2
-@export var alignment_weight: float = 2.5
+@export var separation_weight: float = 1.3
+@export var alignment_weight: float = 2.2
 @export var cohesion_weight: float = 0.8
 
 @export_group("Obstacle Avoidance")
@@ -35,7 +38,7 @@ func _ready() -> void:
 	navigation_agent.target_desired_distance = tolerance
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if target_position:
 		navigation_agent.target_position = target_position
 
@@ -152,10 +155,19 @@ func _on_detection_area_body_exited(body: Node2D) -> void:
 		neighbors.erase(body)
 
 
+## This methods updates the agent's velocity with the safe velocity.
 func _on_velocity_computed(safe_velocity: Vector2) -> void:
 	var flock_force: Vector2 = compute_flocking()
-	var seek_force: Vector2 = get_seek_force()
+	var steering_force: Vector2
 
-	velocity = safe_velocity + (flock_force + seek_force) * get_process_delta_time()
+	match steering_mode:
+		SteeringMode.SEEK:
+			steering_force = get_seek_force()
+		SteeringMode.FLEE:
+			steering_force = get_flee_force()
+		_:
+			steering_force = Vector2.ZERO
+
+	velocity = safe_velocity + (flock_force + steering_force) * get_process_delta_time()
 	velocity = velocity.limit_length(speed)
 	navigation_agent.set_velocity(velocity)

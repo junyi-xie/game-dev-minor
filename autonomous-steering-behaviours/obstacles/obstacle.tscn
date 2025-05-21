@@ -3,16 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://crs00nwkfgsff" path="res://icon.svg" id="1_5rvb3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uojbh"]
+size = Vector2(65, 40)
 
 [node name="Obstacle" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_5rvb3")
 region_enabled = true
-region_rect = Rect2(33, 55, 20, 20)
+region_rect = Rect2(33, 55, 65, 40)
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
-radius = 30.0
+radius = 45.0
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 3
