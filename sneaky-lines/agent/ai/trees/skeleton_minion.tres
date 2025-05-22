@@ -1,0 +1,48 @@
+[gd_resource type="BehaviorTree" load_steps=15 format=3 uid="uid://y20pxo461kal"]
+
+[ext_resource type="Script" uid="uid://daqdgchmacd5q" path="res://agent/ai/tasks/in_field_of_vision.gd" id="1_e6drw"]
+[ext_resource type="Script" uid="uid://lbbnjs3bglva" path="res://agent/ai/tasks/stop_movement.gd" id="1_r8rfy"]
+[ext_resource type="Script" uid="uid://gmnkywllkyou" path="res://agent/ai/tasks/patrol.gd" id="2_g3pmu"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_kt0kl"]
+
+[sub_resource type="BTCondition" id="BTCondition_hshxl"]
+script = ExtResource("1_e6drw")
+
+[sub_resource type="BBNode" id="BBNode_kt0kl"]
+saved_value = NodePath("Skeleton_Minion/AnimationPlayer")
+resource_name = "Skeleton_Minion/AnimationPlayer"
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_r8rfy"]
+animation_player = SubResource("BBNode_kt0kl")
+animation_name = &"Idle"
+blend = 0.2
+
+[sub_resource type="BTAction" id="BTAction_g3pmu"]
+script = ExtResource("1_r8rfy")
+min_wait_time = 1.0
+max_wait_time = 3.0
+
+[sub_resource type="BTSequence" id="BTSequence_g3pmu"]
+custom_name = "Pause before action"
+children = [SubResource("BTPlayAnimation_r8rfy"), SubResource("BTAction_g3pmu")]
+
+[sub_resource type="BTAction" id="BTAction_ka63i"]
+script = ExtResource("2_g3pmu")
+
+[sub_resource type="BTSequence" id="BTSequence_wym58"]
+children = [SubResource("BTAction_ka63i")]
+
+[sub_resource type="BTSequence" id="BTSequence_qvtqv"]
+children = [SubResource("BTSequence_g3pmu"), SubResource("BTSequence_wym58")]
+
+[sub_resource type="BTParallel" id="BTParallel_c0cdt"]
+repeat = true
+children = [SubResource("BTCondition_hshxl"), SubResource("BTSequence_qvtqv")]
+
+[sub_resource type="BTSequence" id="BTSequence_e6drw"]
+children = [SubResource("BTParallel_c0cdt")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_kt0kl")
+root_task = SubResource("BTSequence_e6drw")
