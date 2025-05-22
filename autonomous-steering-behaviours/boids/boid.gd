@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-enum SteeringMode { FLEE, SEEK }
-
 @export_group("Pathfinding")
 @export var tolerance: float = 2.0
 
@@ -9,7 +7,6 @@ enum SteeringMode { FLEE, SEEK }
 @export var speed: float = 350.0
 @export var mass: float = 1.2
 @export var max_steering: float = 200.0
-@export var steering_mode: SteeringMode = SteeringMode.SEEK
 
 @export_group("Flocking Behaviour")
 @export var separation_weight: float = 1.3
