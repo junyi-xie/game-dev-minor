@@ -14,3 +14,7 @@
 Skeleton Character Pack: https://kaylousberg.itch.io/kaykit-skeletons
 
 Adventurers Character Pack: https://kaylousberg.itch.io/kaykit-adventurers
+
+Blur Shaders: https://godotshaders.com/shader/simple-blur-godot-4-1/
+
+Cream Yogurt Font: https://www.dafont.com/cream-yoghurt.font

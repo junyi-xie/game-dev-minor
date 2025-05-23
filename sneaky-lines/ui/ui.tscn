@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3pxbwprsdfrr"]
+
+[ext_resource type="Script" uid="uid://m6o4mjykg87d" path="res://ui/ui.gd" id="1_4cp6t"]
+[ext_resource type="Shader" uid="uid://cqvsuvwer7nxx" path="res://resources/shaders/blur.gdshader" id="1_ns3eh"]
+[ext_resource type="Theme" uid="uid://7cgr8wi7gjox" path="res://resources/themes/main_theme.tres" id="2_5nexe"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5nexe"]
+shader = ExtResource("1_ns3eh")
+shader_parameter/blur_amount = 2.5
+shader_parameter/mix_amount = 0.4
+shader_parameter/color_over = Color(0, 0, 0, 1)
+
+[node name="UI" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4cp6t")
+
+[node name="Blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_5nexe")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_5nexe")
+theme_type_variation = &"TitleLabel"
+text = "Title"
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="ButtonContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="RetryButton" type="Button" parent="CenterContainer/VBoxContainer/MarginContainer/ButtonContainer"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_5nexe")
+theme_override_font_sizes/font_size = 28
+text = "Restart"
+
+[node name="QuitGameButton" type="Button" parent="CenterContainer/VBoxContainer/MarginContainer/ButtonContainer"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_5nexe")
+theme_override_font_sizes/font_size = 28
+text = "Quit Game"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MarginContainer/ButtonContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MarginContainer/ButtonContainer/QuitGameButton" to="." method="_on_quit_game_button_pressed"]

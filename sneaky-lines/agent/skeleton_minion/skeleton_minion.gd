@@ -11,12 +11,11 @@ func _ready() -> void:
 	bt_player.blackboard.set_var(&"target_position", waypoints[0])
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	for body in vision_area.get_overlapping_bodies():
 		if _in_field_of_vision(body):
-			print("i caught you")
-		else:
-			print("obstacle in the way")
+			SignalManager.show_ui.emit("Game Over")
+			break
 
 
 func _in_field_of_vision(target: Node3D) -> bool:
