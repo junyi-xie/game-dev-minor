@@ -27,6 +27,7 @@ func _enter() -> void:
 
 func _tick(_delta: float) -> Status:
 	agent.velocity = Vector3.ZERO
+	agent.navigation_agent.set_velocity(agent.velocity)
 
 	return SUCCESS if elapsed_time >= _target_wait_time else RUNNING
 

@@ -11,6 +11,6 @@
 
 ## Credits
 
-Skeleton Chracter Pack: https://kaylousberg.itch.io/kaykit-skeletons
+Skeleton Character Pack: https://kaylousberg.itch.io/kaykit-skeletons
 
 Adventurers Character Pack: https://kaylousberg.itch.io/kaykit-adventurers

@@ -68,6 +68,10 @@ sprint={
 behavior_tree/behavior_tree_default_dir="res://agent/ai/trees"
 behavior_tree/user_task_dirs=PackedStringArray("res://agent/ai/tasks")
 
+[navigation]
+
+3d/merge_rasterizer_cell_scale=0.001
+
 [rendering]
 
 textures/vram_compression/import_etc2_astc=true
