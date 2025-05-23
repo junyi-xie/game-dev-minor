@@ -19,8 +19,8 @@ _data = {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5hl53"]
 render_priority = 0
 shader = ExtResource("7_2gfcs")
-shader_parameter/fov_color = Color(0.997115, 0.949509, 0.905158, 0.3)
-shader_parameter/fade_distance = 10.0
+shader_parameter/fov_color = Color(0.941176, 0.223529, 0.235294, 0.411765)
+shader_parameter/fade_distance = 1.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_2gfcs"]
 material = SubResource("ShaderMaterial_5hl53")
@@ -33,7 +33,7 @@ points = PackedVector3Array(-4.76837e-07, 7.5, -4.76837e-07, 0.734142, -7.5, 7.4
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4v7i6"]
 radius = 0.75
-height = 2.25
+height = 2.2
 
 [node name="SkeletonMinion" instance=ExtResource("1_4m1wx")]
 script = ExtResource("2_cgwub")
@@ -161,7 +161,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.5
 shape = SubResource("ConvexPolygonShape3D_2gfcs")
 
 [node name="CollisionShape3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
 shape = SubResource("CapsuleShape3D_4v7i6")
 
 [node name="BTPlayer" parent="." index="3"]
