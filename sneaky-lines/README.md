@@ -1,6 +1,17 @@
 # Sneaky Lines - Artificial Intelligence | Platinum 1
 
-.. something inspiring
+A stealth maze game with patrolling agents and cone-shaped Field of Vision (FoV), implemented in Godot 4.4 using LimboAI Behavior Trees.
+
+## Preview
+
+<img src="https://github.com/junyi-xie/game-dev-minor/blob/main/sneaky-lines/preview.gif" />
+
+## Controls
+
+The player can be moved using the following controls:
+- **W / S** – Move forward and backward
+- **A / D** – Move left and right
+- **Space** - Perform a jump
 
 ## Requirements
 
