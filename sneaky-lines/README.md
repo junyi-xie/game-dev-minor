@@ -1,6 +1,6 @@
 # Sneaky Lines - Artificial Intelligence | Platinum 1
 
-A stealth maze game with patrolling agents and cone-shaped Field of Vision (FoV), implemented in Godot 4.4 using LimboAI Behavior Trees.
+A stealth maze game with patrolling agents and cone-shaped Field of Vision (FoV), implemented in Godot 4.4 using LimboAI Behavior Trees and Physics Raycasting for line-of-sight detection.
 
 ## Preview
 
