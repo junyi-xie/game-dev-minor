@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds370rghadh06"]
+
+[ext_resource type="Script" uid="uid://c4rxxuu8rcpni" path="res://utilities/camera/follow_camera.gd" id="1_0fxig"]
+[ext_resource type="Script" uid="uid://c50iliay0bpiw" path="res://utilities/camera/follow_camera_transformer.gd" id="2_n31sr"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0fxig"]
+
+[node name="FollowCamera" type="Node3D"]
+script = ExtResource("1_0fxig")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+collision_mask = 5
+shape = SubResource("SphereShape3D_0fxig")
+
+[node name="CameraPosition" type="Node3D" parent="SpringArm3D"]
+
+[node name="FollowCameraTransformer" type="RemoteTransform3D" parent="." node_paths=PackedStringArray("camera")]
+remote_path = NodePath("..")
+script = ExtResource("2_n31sr")
+camera = NodePath("../SpringArm3D/CameraPosition")

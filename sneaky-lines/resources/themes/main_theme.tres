@@ -1,0 +1,30 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://7cgr8wi7gjox"]
+
+[ext_resource type="StyleBox" uid="uid://dtyn4e6g8yy6p" path="res://resources/themes/styleboxes/button_normal.tres" id="1_i4ejt"]
+[ext_resource type="FontFile" uid="uid://bm7o54focitjs" path="res://resources/fonts/Cream Yoghurt.otf" id="1_x2ak3"]
+[ext_resource type="StyleBox" uid="uid://c0igvuosxygwo" path="res://resources/themes/styleboxes/button_hover.tres" id="1_yjg5f"]
+[ext_resource type="StyleBox" uid="uid://cqxy2s3cotks3" path="res://resources/themes/styleboxes/button_pressed.tres" id="3_0wthw"]
+
+[resource]
+default_font = ExtResource("1_x2ak3")
+default_font_size = 20
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/styles/focus = ExtResource("1_yjg5f")
+Button/styles/hover = ExtResource("1_yjg5f")
+Button/styles/normal = ExtResource("1_i4ejt")
+Button/styles/pressed = ExtResource("3_0wthw")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/constants/line_spacing = 0
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 0
+Label/constants/shadow_outline_size = 0
+Label/styles/normal = null
+TitleLabel/base_type = &"Label"
+TitleLabel/colors/font_color = Color(1, 1, 1, 1)
+TitleLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+TitleLabel/constants/outline_size = 10
+TitleLabel/font_sizes/font_size = 72

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck1jouj0gbyw8"]
+
+[ext_resource type="Script" uid="uid://c42eisjulsjvs" path="res://agent/agent.gd" id="1_2fwuu"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_fjw4s"]
+
+[node name="Agent" type="CharacterBody3D"]
+script = ExtResource("1_2fwuu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[node name="BTPlayer" type="BTPlayer" parent="."]
+blackboard_plan = SubResource("BlackboardPlan_fjw4s")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+avoidance_enabled = true
