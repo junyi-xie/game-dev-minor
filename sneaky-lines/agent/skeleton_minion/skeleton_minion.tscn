@@ -154,11 +154,20 @@ collision_mask = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="VisionArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.5, -7.5)
+visible = false
 mesh = SubResource("CylinderMesh_2gfcs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VisionArea" index="1"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.5, -7.5)
 shape = SubResource("ConvexPolygonShape3D_2gfcs")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="VisionArea" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+light_color = Color(0.643738, 0.0995243, 0.449491, 1)
+light_energy = 100.0
+light_size = 1.0
+spot_range = 16.875
+spot_angle = 26.75
 
 [node name="CollisionShape3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
